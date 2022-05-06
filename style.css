@@ -1,0 +1,93 @@
+.navLinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .navLinkelement {
+    float: left;
+  }
+  
+  .navLinkelement a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .navLinkelement a:hover {
+    background-color: rgb(48, 146, 73);
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  .active{
+    background-color: gray;
+    border-radius: 10px 10px 10px 10px;
+  }
+
+  body{
+    margin: 0;
+    padding: 0;
+  }
+
+  button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color:gray;
+    padding: 20px 100px 20px 100px;  
+    border-radius: 10px 10px 10px 10px;
+    border:0;
+  }
+
+  button:hover{
+      background-color: white;
+  }
+
+  .colorText{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    color:lavender;
+  }
+
+  .ractangle {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    top: 70%;
+    left: 15%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .ractangleElement {
+    float: left;
+    border-radius: 5px 5px 5px 5px;
+    padding: 35px;
+  }
+  
+  .ractangleElement a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
