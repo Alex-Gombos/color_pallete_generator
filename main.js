@@ -89,8 +89,17 @@ getComplementary = (x)=>{
           color+='8';
           break;
     }
-    console.log(x.charAt(i));
   }
-  console.log(color);
+  console.log(hexToRgb(x));
+  console.log(hexToRgb(color));
   return color;
+}
+
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
 }
