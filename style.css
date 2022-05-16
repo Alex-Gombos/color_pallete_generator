@@ -64,7 +64,7 @@
     color:lavender;
   }
 
-  .ractangle {
+  .complementary  {
     position: absolute;
     list-style-type: none;
     margin: 0;
@@ -77,17 +77,36 @@
     transform: translate(-50%, -50%);
   }
 
-  .ractangleElement {
+  .complementaryElement {
     float: left;
     border-radius: 5px 5px 5px 5px;
     padding: 35px;
   }
   
-  .ractangleElement a {
+  .complementaryElement a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
+  }
+
+  .shades{
+    position: absolute;
+    list-style-type: none;
+    margin-left: 200px;
+    margin-top: 100px;
+    padding: 0;
+    overflow: hidden;
+    top: 80%;
+    left: 25%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .shadesElement{
+    float: left;
+    border-radius: 5px 5px 5px 5px;
+    padding: 35px;
   }

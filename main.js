@@ -1,7 +1,9 @@
 const colors = ["green", "red", "pink", "yellow"];
 const btn = document.getElementById("btn");
 const colorText = document.querySelector(".colorText");
-const tb = document.querySelector(".ractangleElement");
+const tb = document.querySelector(".complementaryElement");
+
+let nr = 0;
 
 let randomNumber;
 
@@ -9,6 +11,8 @@ let prevColor = -1;
 let complementaryColor="";
 
 btn.addEventListener("click",  ()=> {
+
+
     const randomColor = getRandomColor();
     while(randomColor == prevColor){
       randomColor = getRandomColor();
@@ -20,14 +24,31 @@ btn.addEventListener("click",  ()=> {
     complementaryColor=getComplementary(randomColor);
     tb.style.backgroundColor = complementaryColor;
     tb.textContent = `${complementaryColor}`;
+
+    let shadeHEX = randomColor;
+
+    for(var i = 0; i<5; i++){
+      console.log(i);
+
+      appendFunction("shades");
+      const el = document.getElementById(i);
+      console.log(el);
+      let shadeRGB = differentShades(shadeHEX);
+      shadeHEX = rgbToHex(shadeRGB.r, shadeRGB.g, shadeRGB.b);
+      console.log(el.id);
+      el.style.backgroundColor = shadeHEX;
+      el.textContent = shadeHEX;
+    }
+
+
 });
+
 
 getRandomNumber = () => {
   return Math.floor(Math.random() * colors.length);
 }
 
 getRandomColor = () => {
-  //console.log("Alex".slice("Alex".length-1));
   var letters = '0123456789ABCDEF';
   var color = '#';
   for (var i = 0; i < 6; i++) {
@@ -90,16 +111,49 @@ getComplementary = (x)=>{
           break;
     }
   }
-  console.log(hexToRgb(x));
-  console.log(hexToRgb(color));
+  //console.log(hexToRgb(x));
+  //console.log(hexToRgb(color));
   return color;
 }
 
-function hexToRgb(hex) {
+hexToRgb = (hex) => {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
     b: parseInt(result[3], 16)
   } : null;
+}
+
+componentToHex = (c) => {
+  if(!isNaN(c)){
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+}
+
+rgbToHex = (r, g, b) => {
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+
+
+appendFunction = (ulElement) =>{
+
+  var ul = document.querySelector(`.${ulElement}`);
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode(`${nr}`));
+  li.setAttribute("id", `${nr}`); // added 
+  nr++;
+  li.className = "shadesElement";
+  ul.appendChild(li);
+}
+
+
+differentShades = (randomColor) =>{
+  const rgbValue = hexToRgb(randomColor);
+  console.log(rgbValue);
+  for(var i in rgbValue){
+    rgbValue[i]+=10;
+  }
+  return rgbValue;
 }
